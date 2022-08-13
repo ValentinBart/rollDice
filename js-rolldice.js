@@ -90,14 +90,19 @@ function roll(){
         case 6:
         ctx.beginPath();
         ctx.arc(bas,bas,radius,2*Math.PI,false);
+        ctx.fill();
         ctx.beginPath();     
         ctx.arc(bas,haut,radius,2*Math.PI,false);
+        ctx.fill();
         ctx.beginPath();   
         ctx.arc(bas,milieu,radius,2*Math.PI,false);
+        ctx.fill();
         ctx.beginPath();
         ctx.arc(haut,milieu,radius,2*Math.PI,false);
+        ctx.fill();
         ctx.beginPath();      
         ctx.arc(haut,bas,radius,2*Math.PI,false); 
+        ctx.fill();
         ctx.beginPath();
         ctx.arc(haut,haut,radius,2*Math.PI,false);     
         ctx.fill();
