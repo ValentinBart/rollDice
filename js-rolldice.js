@@ -71,6 +71,18 @@ function hold(){
     }
 
 }
+//fonction nouvelle partie qui remet les score à 0 et supprime les canvas
+function newGame(){
+    scoreJ1 = 0; 
+    scoreJ2 = 0;
+    tempJ1 = 0;
+    tempJ2 = 0;
+    etat = 1;
+
+    let canvasDe = document.getElementById('canvasDe');
+    var ctx = canvasDe.getContext("2d");
+    ctx.clearRect(0,00,200,200);
+}
 
 //fonction qui permet de créer les différentes face du dé en fonction du résultat.
 function canvasDe(de){
@@ -79,7 +91,7 @@ function canvasDe(de){
     var ctx = canvasDe.getContext("2d");
     ctx.lineWidth="4";
     ctx.strokeStyle="#000000";
-    ctx.rect(50,50,100,100);
+    ctx.rect(40,40,120,120);
     ctx.stroke();
 
     const radius = 6;
