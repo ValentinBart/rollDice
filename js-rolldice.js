@@ -29,29 +29,46 @@ function roll(){
         if(result == 1){
             etat = 2;
             tempJ1 = 0;
-            setTimeout(() => {enCours.innerText = 'En cours J1 ' + tempJ1;},3000);
-
         } else{
             tempJ1 = tempJ1 + result;
-            
-            setTimeout(() => {enCours.innerText = 'En cours J1 ' + tempJ1;},3000);
         }
+        setTimeout(() => {enCours.innerText = 'En cours J1 ' + tempJ1;},3000);
     } else{
         let enCours = document.getElementById('enCoursJ2');
         if(result == 1){
             etat = 1;
-            tempJ2 = 0;
-            setTimeout(() => {enCours.innerText = 'En cours J2 ' + tempJ2;},3000);
-
+            tempJ2 = 0; 
         } else{
-            tempJ2 = tempJ2 + result;
-            
-            setTimeout(() => {enCours.innerText = 'En cours J2 ' + tempJ2;},3000);
+            tempJ2 = tempJ2 + result;       
         }
+        setTimeout(() => {enCours.innerText = 'En cours J2 ' + tempJ2;},3000);
     }
 
 
 
+
+}
+
+//fonction pour stocker le score    
+function hold(){
+    if(etat == 1){
+        etat = 2;
+        scoreJ1 = scoreJ1 + tempJ1;
+        tempJ1 = 0;
+        let cumulJ1 = document.getElementById('cumulJ1');
+        cumulJ1.innerText ='Score J1: '+scoreJ1;
+        let enCours = document.getElementById('enCoursJ1');
+        enCours.innerText = 'En cours J1 ' + tempJ1;
+    }else{
+        etat = 1;
+        scoreJ2 = scoreJ2 + tempJ2;
+        tempJ2 = 0;
+        let cumulJ2 = document.getElementById('cumulJ2');
+        cumulJ2.innerText ='Score J2: '+scoreJ2;
+        let enCours = document.getElementById('enCoursJ2');
+        enCours.innerText = 'En cours J2 ' + tempJ2;
+
+    }
 
 }
 
