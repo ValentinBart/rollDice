@@ -137,31 +137,28 @@ function aleaDe(){
 
 
 function animationDe(int){
-   
-    setTimeout(aleaDe,1);
-    setTimeout(aleaDe,3);
-    setTimeout(aleaDe,5);
-    setTimeout(aleaDe,7);
-    setTimeout(aleaDe,10);
-    setTimeout(aleaDe,20);
-    setTimeout(aleaDe,30);
-    setTimeout(aleaDe,40);
-    setTimeout(aleaDe,50);
-    setTimeout(aleaDe,60);
-    setTimeout(aleaDe,70);
-    setTimeout(aleaDe,100);
-    setTimeout(aleaDe,200);
-    setTimeout(aleaDe,300);
-    setTimeout(aleaDe,400);
-    setTimeout(aleaDe,600);
-    setTimeout(aleaDe,800);
-    setTimeout(aleaDe,1000);
-    setTimeout(aleaDe,1200);
-    setTimeout(aleaDe,1500);
-    setTimeout(aleaDe,2000);
 
+    let start = Date.now(); // mémoriser l'heure de début
+
+    let timer = setInterval(function() {
+      // combien de temps s'est écoulé depuis le début ?
+      let timePassed = Date.now() - start;
     
-    setTimeout(() => {canvasDe(int)},2800);
+      if (timePassed >= 2000) {
+        clearInterval(timer); // terminer l'animation après 2 secondes
+        return;
+      }
+    
+      // dessiner l'animation à l'instant timePassed
+      aleaDe();
+    
+    }, 20);
+   
+   
+    setTimeout(aleaDe,2200);
+    setTimeout(aleaDe,2500);
+    
+    setTimeout(() => {canvasDe(int)},3000);
     
     
 }
