@@ -16,7 +16,8 @@ let cumulJ2 = document.getElementById('cumulJ2');
 let enCoursJ1 = document.getElementById('enCoursJ1');
 let enCoursJ2 = document.getElementById('enCoursJ2');
 let retour = document.getElementById('retour');
-
+let j1 = document.getElementById('j1');
+let j2 = document.getElementById('j2');
 
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
 function roll(){
@@ -34,6 +35,12 @@ function roll(){
         if(result == 1){
             etat = 2;
             tempJ1 = 0;
+
+            setTimeout(() => {
+                j1.style.border ='0px solid red'
+                j2.style.border ='1rem solid red'
+            },3000)
+
         } else{
             tempJ1 = tempJ1 + result;
         }
@@ -43,6 +50,11 @@ function roll(){
         if(result == 1){
             etat = 1;
             tempJ2 = 0; 
+            setTimeout(() => {
+                j2.style.border ='0px solid red'
+                j1.style.border ='1rem solid red'
+            },3000)
+
         } else{
             tempJ2 = tempJ2 + result;       
         }
@@ -62,12 +74,20 @@ function hold(){
         tempJ1 = 0;
         cumulJ1.innerText = scoreJ1;
         enCoursJ1.innerText = 'En cours J1 : ' + tempJ1;
+        
+        j1.style.border ='0px solid red'
+        j2.style.border ='1rem solid red'
+        
     }else{
         etat = 1;
         scoreJ2 = scoreJ2 + tempJ2;
         tempJ2 = 0;
         cumulJ2.innerText = scoreJ2;
         enCoursJ2.innerText = 'En cours J2 : ' + tempJ2;
+       
+        j2.style.border ='0px solid red'
+        j1.style.border ='1rem solid red'
+       
 
     }
 
