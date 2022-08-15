@@ -24,29 +24,33 @@
 <body>
       
 
-  <div class="container">
+  <div class="container-fluid">
+
     <div class="row">
         <div class="col col-lg-4 j1">
           <p id ="cumulJ1">Score J1: 0</p>
-          <p id="enCoursJ1">En cours J1 : 0</p>
+          <p id="enCours">En cours J1 : 0</p>
 
         </div>
 
         <div class="col col-lg-4 table">
-          <button onclick="roll()">Roll</button>
-
+          <button onclick="newGame()" id="buttonNew">Nouvelle partie</button>
+          
+          <br><br/>
           <canvas id='canvasDe' width='200' height='200'>Votre navigateur est trop vieux</canvas>
-
+          <br><br/>
+          <button onclick="roll()" id="buttonRoll">Roll</button>
+          <br><br/>
           <button onclick="hold()">HOLD</button>
 
-          <button onclick="newGame()">Nouvelle partie</button>
+          
 
         </div>
 
 
         <div class="col col-lg-4 j2">
           <p id ="cumulJ2">Score J2: 0</p>
-          <p id="enCoursJ2">En cours J2 : 0</p>
+          <p id="enCours">En cours J2 : 0</p>
 
         </div>
     </div>

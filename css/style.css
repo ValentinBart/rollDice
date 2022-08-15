@@ -1,8 +1,11 @@
+body{
 
+    text-align: center;
+}
 
 
 .j1{
-
+    padding-top: 20px;
     background-color: antiquewhite;
     width: 100%;
     min-height: 400px;
@@ -11,11 +14,28 @@
 
 .j2{
     background-color: aquamarine;
+    padding-top: 20px;
     width: 100%;
     min-height: 400px;
 
 }
 
-#buttonRoll{
-    margin-left: 40%;
+.table{
+    
+    justify-content: center;
+}
+
+#buttonNew{
+    margin-top: 20px;
+}
+
+#enCours{
+
+    position: relative;
+    top: 70%;
+  
+}
+
+#canvasDe{
+    
 }

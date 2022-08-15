@@ -103,11 +103,11 @@ function canvasDe(de){
 
     const radius = 6;
 
-    ctx.clearRect(55,55,80,80);
+    ctx.clearRect(45,45,100,100);
 
-    const haut = 75;
+    const haut = 70;
     const milieu = 100;
-    const bas = 125;
+    const bas = 130;
 
     switch(de){
         case 1: 
