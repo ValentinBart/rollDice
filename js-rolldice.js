@@ -2,10 +2,6 @@
 //score cumulé des joueurs 
 var scoreJ1 = 0; 
 var scoreJ2 = 0;
-let cumulJ1 = document.getElementById('cumulJ1');
-let cumulJ2 = document.getElementById('cumulJ2');
-let enCoursJ1 = document.getElementById('enCoursJ1');
-let enCoursJ2 = document.getElementById('enCoursJ2');
 
 //score en cours des joueurs
 var tempJ1 = 0;
@@ -14,6 +10,11 @@ var tempJ2 = 0;
 //Etat pour savoir si c'est le tour du joueur 1 ou 2
 var etat = 1;
 
+//récupération des différents éléments à modifier
+let cumulJ1 = document.getElementById('cumulJ1');
+let cumulJ2 = document.getElementById('cumulJ2');
+let enCoursJ1 = document.getElementById('enCoursJ1');
+let enCoursJ2 = document.getElementById('enCoursJ2');
 let retour = document.getElementById('retour');
 
 
@@ -36,7 +37,7 @@ function roll(){
         } else{
             tempJ1 = tempJ1 + result;
         }
-        setTimeout(() => {enCoursJ1.innerText = 'En cours J1 ' + tempJ1;},3000);
+        setTimeout(() => {enCoursJ1.innerText = 'En cours J1 : ' + tempJ1;},3000);
     } else{
         
         if(result == 1){
@@ -45,7 +46,7 @@ function roll(){
         } else{
             tempJ2 = tempJ2 + result;       
         }
-        setTimeout(() => {enCoursJ2.innerText = 'En cours J2 ' + tempJ2;},3000);
+        setTimeout(() => {enCoursJ2.innerText = 'En cours J2 : ' + tempJ2;},3000);
     }
 
     
@@ -60,14 +61,23 @@ function hold(){
         scoreJ1 = scoreJ1 + tempJ1;
         tempJ1 = 0;
         cumulJ1.innerText = scoreJ1;
-        enCoursJ1.innerText = 'En cours J1 ' + tempJ1;
+        enCoursJ1.innerText = 'En cours J1 : ' + tempJ1;
     }else{
         etat = 1;
         scoreJ2 = scoreJ2 + tempJ2;
         tempJ2 = 0;
         cumulJ2.innerText = scoreJ2;
-        enCoursJ2.innerText = 'En cours J2 ' + tempJ2;
+        enCoursJ2.innerText = 'En cours J2 : ' + tempJ2;
 
+    }
+
+    if(scoreJ1 >= 100){
+
+        cumulJ1.innerText = 'Victoire';
+        cumulJ1.style.color ='Green'
+    }if(scoreJ2 >= 100){
+        cumulJ2.innerText = 'Victoire';
+        cumulJ2.style.color ='Green'
     }
 
 }
