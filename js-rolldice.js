@@ -49,7 +49,7 @@ function roll(){
 
 }
 
-//fonction pour stocker le score    
+//fonction pour stocker le score et changer de joueur  
 function hold(){
     if(etat == 1){
         etat = 2;
