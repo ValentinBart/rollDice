@@ -48,7 +48,7 @@ function roll(){
         setTimeout(() => {enCoursJ2.innerText = 'En cours J2 ' + tempJ2;},3000);
     }
 
-
+    
 
 
 }
@@ -59,13 +59,13 @@ function hold(){
         etat = 2;
         scoreJ1 = scoreJ1 + tempJ1;
         tempJ1 = 0;
-        cumulJ1.innerText ='Score J1: '+scoreJ1;
+        cumulJ1.innerText = scoreJ1;
         enCoursJ1.innerText = 'En cours J1 ' + tempJ1;
     }else{
         etat = 1;
         scoreJ2 = scoreJ2 + tempJ2;
         tempJ2 = 0;
-        cumulJ2.innerText ='Score J2: '+scoreJ2;
+        cumulJ2.innerText = scoreJ2;
         enCoursJ2.innerText = 'En cours J2 ' + tempJ2;
 
     }
@@ -83,9 +83,9 @@ function newGame(){
     var ctx = canvasDe.getContext("2d");
     ctx.clearRect(0,00,200,200);
 
-    cumulJ1.innerText ='Score J1: '+scoreJ1;
+    cumulJ1.innerText = scoreJ1;
     enCoursJ1.innerText = 'En cours J1 ' + tempJ1;
-    cumulJ2.innerText ='Score J2: '+scoreJ2;
+    cumulJ2.innerText = scoreJ2;
     enCoursJ2.innerText = 'En cours J2 ' + tempJ2;
 
     
