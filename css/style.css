@@ -1,0 +1,21 @@
+
+
+
+.j1{
+
+    background-color: antiquewhite;
+    width: 100%;
+    min-height: 400px;
+
+}
+
+.j2{
+    background-color: aquamarine;
+    width: 100%;
+    min-height: 400px;
+
+}
+
+#buttonRoll{
+    margin-left: 40%;
+}
