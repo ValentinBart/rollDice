@@ -2,6 +2,10 @@
 //score cumulé des joueurs 
 var scoreJ1 = 0; 
 var scoreJ2 = 0;
+let cumulJ1 = document.getElementById('cumulJ1');
+let cumulJ2 = document.getElementById('cumulJ2');
+let enCoursJ1 = document.getElementById('enCoursJ1');
+let enCoursJ2 = document.getElementById('enCoursJ2');
 
 //score en cours des joueurs
 var tempJ1 = 0;
@@ -10,6 +14,7 @@ var tempJ2 = 0;
 //Etat pour savoir si c'est le tour du joueur 1 ou 2
 var etat = 1;
 
+let retour = document.getElementById('retour');
 
 
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
@@ -18,30 +23,29 @@ function roll(){
 
 
     var result = Math.floor(Math.random() * 6) + 1;
-    let retour = document.getElementById('retour');
-    retour.innerText = "résultat du dé " + result;
+    retour.innerText = "résultat du dé " + result;// a supprimer par la suite une fois les test faits
     
     animationDe(result);
     
     //Conditon qui stock le résultat en fonction du l'état de la partie
     if(etat == 1){
-        let enCours = document.getElementById('enCoursJ1');
+        
         if(result == 1){
             etat = 2;
             tempJ1 = 0;
         } else{
             tempJ1 = tempJ1 + result;
         }
-        setTimeout(() => {enCours.innerText = 'En cours J1 ' + tempJ1;},3000);
+        setTimeout(() => {enCoursJ1.innerText = 'En cours J1 ' + tempJ1;},3000);
     } else{
-        let enCours = document.getElementById('enCoursJ2');
+        
         if(result == 1){
             etat = 1;
             tempJ2 = 0; 
         } else{
             tempJ2 = tempJ2 + result;       
         }
-        setTimeout(() => {enCours.innerText = 'En cours J2 ' + tempJ2;},3000);
+        setTimeout(() => {enCoursJ2.innerText = 'En cours J2 ' + tempJ2;},3000);
     }
 
 
@@ -55,18 +59,14 @@ function hold(){
         etat = 2;
         scoreJ1 = scoreJ1 + tempJ1;
         tempJ1 = 0;
-        let cumulJ1 = document.getElementById('cumulJ1');
         cumulJ1.innerText ='Score J1: '+scoreJ1;
-        let enCours = document.getElementById('enCoursJ1');
-        enCours.innerText = 'En cours J1 ' + tempJ1;
+        enCoursJ1.innerText = 'En cours J1 ' + tempJ1;
     }else{
         etat = 1;
         scoreJ2 = scoreJ2 + tempJ2;
         tempJ2 = 0;
-        let cumulJ2 = document.getElementById('cumulJ2');
         cumulJ2.innerText ='Score J2: '+scoreJ2;
-        let enCours = document.getElementById('enCoursJ2');
-        enCours.innerText = 'En cours J2 ' + tempJ2;
+        enCoursJ2.innerText = 'En cours J2 ' + tempJ2;
 
     }
 
@@ -82,6 +82,13 @@ function newGame(){
     let canvasDe = document.getElementById('canvasDe');
     var ctx = canvasDe.getContext("2d");
     ctx.clearRect(0,00,200,200);
+
+    cumulJ1.innerText ='Score J1: '+scoreJ1;
+    enCoursJ1.innerText = 'En cours J1 ' + tempJ1;
+    cumulJ2.innerText ='Score J2: '+scoreJ2;
+    enCoursJ2.innerText = 'En cours J2 ' + tempJ2;
+
+    
 }
 
 //fonction qui permet de créer les différentes face du dé en fonction du résultat.
