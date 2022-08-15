@@ -18,11 +18,16 @@ let enCoursJ2 = document.getElementById('enCoursJ2');
 let retour = document.getElementById('retour');
 let j1 = document.getElementById('j1');
 let j2 = document.getElementById('j2');
+let buttonRoll = document.getElementById('buttonRoll');
+let buttonHold = document.getElementById('buttonHold');
+let buttonNew = document.getElementById('buttonNew');
 
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
 function roll(){
     
-
+    buttonRoll.disabled = true;
+    buttonHold.disabled = true;
+    buttonNew.disabled = true;
 
     var result = Math.floor(Math.random() * 6) + 1;
     retour.innerText = "résultat du dé " + result;// a supprimer par la suite une fois les test faits
@@ -37,8 +42,8 @@ function roll(){
             tempJ1 = 0;
 
             setTimeout(() => {
-                j1.style.border ='0px solid red'
-                j2.style.border ='1rem solid red'
+                j1.style.border ='0px solid green'
+                j2.style.border ='1rem solid green'
             },3000)
 
         } else{
@@ -51,17 +56,23 @@ function roll(){
             etat = 1;
             tempJ2 = 0; 
             setTimeout(() => {
-                j2.style.border ='0px solid red'
-                j1.style.border ='1rem solid red'
+                j2.style.border ='0px solid green'
+                j1.style.border ='1rem solid green'
             },3000)
 
         } else{
             tempJ2 = tempJ2 + result;       
         }
         setTimeout(() => {enCoursJ2.innerText = 'En cours J2 : ' + tempJ2;},3000);
+
     }
 
-    
+
+    setTimeout(() => {    
+        buttonRoll.disabled = false;
+        buttonHold.disabled = false;
+        buttonNew.disabled = false;
+    },3000);
 
 
 }
@@ -75,8 +86,8 @@ function hold(){
         cumulJ1.innerText = scoreJ1;
         enCoursJ1.innerText = 'En cours J1 : ' + tempJ1;
         
-        j1.style.border ='0px solid red'
-        j2.style.border ='1rem solid red'
+        j1.style.border ='0px solid green'
+        j2.style.border ='1rem solid green'
         
     }else{
         etat = 1;
@@ -85,8 +96,8 @@ function hold(){
         cumulJ2.innerText = scoreJ2;
         enCoursJ2.innerText = 'En cours J2 : ' + tempJ2;
        
-        j2.style.border ='0px solid red'
-        j1.style.border ='1rem solid red'
+        j2.style.border ='0px solid green'
+        j1.style.border ='1rem solid green'
        
 
     }
@@ -95,9 +106,18 @@ function hold(){
 
         cumulJ1.innerText = 'Victoire';
         cumulJ1.style.color ='Green'
+        cumulJ2.innerText = 'Défaite';
+        cumulJ2.style.color ='red'
+        j2.style.border ='1rem solid red'
+        j1.style.border ='1rem solid green'
+
     }if(scoreJ2 >= 100){
         cumulJ2.innerText = 'Victoire';
         cumulJ2.style.color ='Green'
+        cumulJ1.innerText = 'Défaite';
+        cumulJ1.style.color ='red'
+        j1.style.border ='1rem solid red'
+        j2.style.border ='1rem solid green'
     }
 
 }
