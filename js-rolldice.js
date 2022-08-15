@@ -1,16 +1,57 @@
 
+//score cumulé des joueurs 
+var scoreJ1 = 0; 
+var scoreJ2 = 0;
+
+//score en cours des joueurs
+var tempJ1 = 0;
+var tempJ2 = 0;
+
+//Etat pour savoir si c'est le tour du joueur 1 ou 2
+var etat = 1;
+
+
+
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
 function roll(){
     
-    
+
 
     var result = Math.floor(Math.random() * 6) + 1;
     let retour = document.getElementById('retour');
     retour.innerText = "résultat du dé " + result;
     
     animationDe(result);
-        
     
+    //Conditon qui stock le résultat en fonction du l'état de la partie
+    if(etat == 1){
+        let enCours = document.getElementById('enCoursJ1');
+        if(result == 1){
+            etat = 2;
+            tempJ1 = 0;
+            setTimeout(() => {enCours.innerText = 'En cours J1 ' + tempJ1;},3000);
+
+        } else{
+            tempJ1 = tempJ1 + result;
+            
+            setTimeout(() => {enCours.innerText = 'En cours J1 ' + tempJ1;},3000);
+        }
+    } else{
+        let enCours = document.getElementById('enCoursJ2');
+        if(result == 1){
+            etat = 1;
+            tempJ2 = 0;
+            setTimeout(() => {enCours.innerText = 'En cours J2 ' + tempJ2;},3000);
+
+        } else{
+            tempJ2 = tempJ2 + result;
+            
+            setTimeout(() => {enCours.innerText = 'En cours J2 ' + tempJ2;},3000);
+        }
+    }
+
+
+
 
 }
 
@@ -127,6 +168,7 @@ function canvasDe(de){
     
 }
 
+//Une fonction qui génère un canvas de dé aléatoire indépendament du résultat pour l'animation
 function aleaDe(){
     
     var alea = Math.floor(Math.random() * 6) + 1;
@@ -135,7 +177,7 @@ function aleaDe(){
 }
 
 
-
+//Fonction pour animer le dé au moement du résultat
 function animationDe(int){
 
     let start = Date.now(); // mémoriser l'heure de début
