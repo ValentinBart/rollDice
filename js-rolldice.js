@@ -25,9 +25,15 @@ let buttonNew = document.getElementById('buttonNew');
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
 function roll(){
     
+    //désactivation des boutons le temps du lancé de dé
     buttonRoll.disabled = true;
     buttonHold.disabled = true;
     buttonNew.disabled = true;
+    setTimeout(() => {    
+        buttonRoll.disabled = false;
+        buttonHold.disabled = false;
+        buttonNew.disabled = false;
+    },3000);
 
     var result = Math.floor(Math.random() * 6) + 1;
     retour.innerText = "résultat du dé " + result;// a supprimer par la suite une fois les test faits
@@ -68,11 +74,7 @@ function roll(){
     }
 
 
-    setTimeout(() => {    
-        buttonRoll.disabled = false;
-        buttonHold.disabled = false;
-        buttonNew.disabled = false;
-    },3000);
+
 
 
 }
@@ -110,6 +112,8 @@ function hold(){
         cumulJ2.style.color ='red'
         j2.style.border ='1rem solid red'
         j1.style.border ='1rem solid green'
+        buttonRoll.disabled = true;
+        buttonHold.disabled = true;
 
     }if(scoreJ2 >= 100){
         cumulJ2.innerText = 'Victoire';
@@ -118,6 +122,8 @@ function hold(){
         cumulJ1.style.color ='red'
         j1.style.border ='1rem solid red'
         j2.style.border ='1rem solid green'
+        buttonRoll.disabled = true;
+        buttonHold.disabled = true;
     }
 
 }
@@ -137,6 +143,8 @@ function newGame(){
     enCoursJ1.innerText = 'En cours J1 ' + tempJ1;
     cumulJ2.innerText = scoreJ2;
     enCoursJ2.innerText = 'En cours J2 ' + tempJ2;
+    buttonRoll.disabled = false;
+    buttonHold.disabled = false;
 
     
 }
