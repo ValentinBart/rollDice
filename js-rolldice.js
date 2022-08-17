@@ -35,12 +35,12 @@ function roll(){
         buttonNew.disabled = false;
     },3000);
 
+    //random du dé + animation
     var result = Math.floor(Math.random() * 6) + 1;
-    
     
     animationDe(result);
     
-    //Conditon qui stock le résultat en fonction du l'état de la partie
+    //Conditon qui stock le résultat en fonction du l'état de la partie et fait les modifications
     if(etat == 1){
         
         if(result == 1){
@@ -141,9 +141,9 @@ function newGame(){
     ctx.clearRect(0,00,200,200);
 
     cumulJ1.innerText = scoreJ1;
-    enCoursJ1.innerText = 'En cours J1 ' + tempJ1;
+    enCoursJ1.innerText = tempJ1;
     cumulJ2.innerText = scoreJ2;
-    enCoursJ2.innerText = 'En cours J2 ' + tempJ2;
+    enCoursJ2.innerText = tempJ2;
     buttonRoll.disabled = false;
     buttonHold.disabled = false;
 
