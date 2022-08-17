@@ -36,7 +36,7 @@ function roll(){
     },3000);
 
     var result = Math.floor(Math.random() * 6) + 1;
-    retour.innerText = "résultat du dé " + result;// a supprimer par la suite une fois les test faits
+    
     
     animationDe(result);
     
