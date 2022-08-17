@@ -48,28 +48,29 @@ function roll(){
             tempJ1 = 0;
 
             setTimeout(() => {
-                j1.style.border ='0px solid green'
-                j2.style.border ='1rem solid green'
-            },3000)
+                j1.style.border ='1rem solid antiquewhite';
+                j2.style.border ='1rem solid green';
+                },3000)
 
         } else{
             tempJ1 = tempJ1 + result;
         }
-        setTimeout(() => {enCoursJ1.innerText = 'En cours J1 : ' + tempJ1;},3000);
+        setTimeout(() => {enCoursJ1.innerText =tempJ1;},3000);
     } else{
         
         if(result == 1){
             etat = 1;
             tempJ2 = 0; 
             setTimeout(() => {
-                j2.style.border ='0px solid green'
-                j1.style.border ='1rem solid green'
+                j2.style.border ='1rem solid aquamarine';
+                j1.style.border ='1rem solid green';
+
             },3000)
 
         } else{
             tempJ2 = tempJ2 + result;       
         }
-        setTimeout(() => {enCoursJ2.innerText = 'En cours J2 : ' + tempJ2;},3000);
+        setTimeout(() => {enCoursJ2.innerText =tempJ2;},3000);
 
     }
 
@@ -86,20 +87,20 @@ function hold(){
         scoreJ1 = scoreJ1 + tempJ1;
         tempJ1 = 0;
         cumulJ1.innerText = scoreJ1;
-        enCoursJ1.innerText = 'En cours J1 : ' + tempJ1;
+        enCoursJ1.innerText = tempJ1;
         
-        j1.style.border ='0px solid green'
-        j2.style.border ='1rem solid green'
+        j1.style.border ='1rem solid antiquewhite';
+        j2.style.border ='1rem solid green';
         
     }else{
         etat = 1;
         scoreJ2 = scoreJ2 + tempJ2;
         tempJ2 = 0;
         cumulJ2.innerText = scoreJ2;
-        enCoursJ2.innerText = 'En cours J2 : ' + tempJ2;
+        enCoursJ2.innerText = tempJ2;
        
-        j2.style.border ='0px solid green'
-        j1.style.border ='1rem solid green'
+        j2.style.border ='1rem solid aquamarine';
+        j1.style.border ='1rem solid green';
        
 
     }
@@ -107,11 +108,11 @@ function hold(){
     if(scoreJ1 >= 100){
 
         cumulJ1.innerText = 'Victoire';
-        cumulJ1.style.color ='Green'
+        cumulJ1.style.color ='Green';
         cumulJ2.innerText = 'Défaite';
-        cumulJ2.style.color ='red'
-        j2.style.border ='1rem solid red'
-        j1.style.border ='1rem solid green'
+        cumulJ2.style.color ='red';
+        j2.style.border ='1rem solid red';
+        j1.style.border ='1rem solid green';
         buttonRoll.disabled = true;
         buttonHold.disabled = true;
 
@@ -119,9 +120,9 @@ function hold(){
         cumulJ2.innerText = 'Victoire';
         cumulJ2.style.color ='Green'
         cumulJ1.innerText = 'Défaite';
-        cumulJ1.style.color ='red'
-        j1.style.border ='1rem solid red'
-        j2.style.border ='1rem solid green'
+        cumulJ1.style.color ='red';
+        j1.style.border ='1rem solid red';
+        j2.style.border ='1rem solid green';
         buttonRoll.disabled = true;
         buttonHold.disabled = true;
     }
