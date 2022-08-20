@@ -40,6 +40,14 @@ body{
     
 }
 
+.canvas{
+
+    position: relative;
+    left: 120px;
+    bottom: 55px;
+
+}
+
 #buttonNew{
     margin-top: 20px;
 }
