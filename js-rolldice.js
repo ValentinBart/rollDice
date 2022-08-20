@@ -1,4 +1,4 @@
-
+pointG();
 //score cumulé des joueurs 
 var scoreJ1 = 0; 
 var scoreJ2 = 0;
@@ -21,6 +21,7 @@ let j2 = document.getElementById('j2');
 let buttonRoll = document.getElementById('buttonRoll');
 let buttonHold = document.getElementById('buttonHold');
 let buttonNew = document.getElementById('buttonNew');
+
 
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
 function roll(){
@@ -49,6 +50,8 @@ function roll(){
 
             setTimeout(() => {
 
+                pointD();
+
                 },3000)
 
         } else{
@@ -62,6 +65,7 @@ function roll(){
             tempJ2 = 0; 
             setTimeout(() => {
 
+                pointG();
 
             },3000)
 
@@ -87,7 +91,7 @@ function hold(){
         cumulJ1.innerText = scoreJ1;
         enCoursJ1.innerText = tempJ1;
         
-
+        pointD();
         
     }else{
         etat = 1;
@@ -96,7 +100,7 @@ function hold(){
         cumulJ2.innerText = scoreJ2;
         enCoursJ2.innerText = tempJ2;
        
-
+        pointG();
        
 
     }
@@ -260,6 +264,36 @@ function canvasDe(de){
 
 
     
+}
+
+function pointG(){
+
+    let canvasG = document.getElementById('canvasG');
+    var ctx = canvasG.getContext("2d");
+    ctx.fillStyle ="#E90000";
+    ctx.beginPath();
+    ctx.arc(10,10,10,2*Math.PI,false);
+    ctx.fill();
+
+    let canvasD = document.getElementById('canvasD');
+    var ctx2 = canvasD.getContext("2d");
+    ctx2.clearRect(0,0,50,50);
+
+}
+
+function pointD(){
+
+    let canvasD = document.getElementById('canvasD');
+    var ctx = canvasD.getContext("2d");
+    ctx.fillStyle ="#E90000";
+    ctx.beginPath();
+    ctx.arc(10,10,10,2*Math.PI,false);
+    ctx.fill();
+
+    let canvasG = document.getElementById('canvasG');
+    var ctx2 = canvasG.getContext("2d");
+    ctx2.clearRect(0,0,50,50);
+
 }
 
 //Une fonction qui génère un canvas de dé aléatoire indépendament du résultat pour l'animation
