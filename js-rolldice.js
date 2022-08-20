@@ -48,8 +48,7 @@ function roll(){
             tempJ1 = 0;
 
             setTimeout(() => {
-                j1.style.border ='1rem solid antiquewhite';
-                j2.style.border ='1rem solid green';
+
                 },3000)
 
         } else{
@@ -62,8 +61,7 @@ function roll(){
             etat = 1;
             tempJ2 = 0; 
             setTimeout(() => {
-                j2.style.border ='1rem solid aquamarine';
-                j1.style.border ='1rem solid green';
+
 
             },3000)
 
@@ -89,8 +87,7 @@ function hold(){
         cumulJ1.innerText = scoreJ1;
         enCoursJ1.innerText = tempJ1;
         
-        j1.style.border ='1rem solid antiquewhite';
-        j2.style.border ='1rem solid green';
+
         
     }else{
         etat = 1;
@@ -99,8 +96,7 @@ function hold(){
         cumulJ2.innerText = scoreJ2;
         enCoursJ2.innerText = tempJ2;
        
-        j2.style.border ='1rem solid aquamarine';
-        j1.style.border ='1rem solid green';
+
        
 
     }
