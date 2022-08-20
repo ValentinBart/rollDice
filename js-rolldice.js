@@ -156,13 +156,15 @@ function canvasDe(de){
     let canvasDe = document.getElementById('canvasDe');
     var ctx = canvasDe.getContext("2d");
     ctx.lineWidth="4";
-    ctx.strokeStyle="#000000";
+    ctx.strokeStyle="black";
+    ctx.fillStyle="white";
     ctx.rect(40,40,120,120);
     ctx.stroke();
 
     const radius = 6;
 
-    ctx.clearRect(45,45,100,100);
+    ctx.clearRect(40,40,120,120);
+    ctx.fillRect(40,40,120,120);
 
     const haut = 70;
     const milieu = 100;
@@ -235,6 +237,7 @@ function canvasDe(de){
         break;
 
         case 6:
+        ctx.fillStyle ="#E90000";
         ctx.beginPath();
         ctx.arc(bas,bas,radius,2*Math.PI,false);
         ctx.fill();
