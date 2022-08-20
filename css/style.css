@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 body{
     font-family: Lato;
@@ -13,21 +13,22 @@ body{
 }
 
 .j1{
-    display: inline-block;
+   
     padding-top: 20px;
     background-color: antiquewhite;
     width: 100%;
     min-height: 500px;
-    
+    font-weight: bold;
     
 }
 
 .j2{
-    display: inline-block;
+    
     background-color: aquamarine;
     padding-top: 20px;
     width: 100%;
     min-height: 500px;
+    font-weight: lighter;
     
 
 }
@@ -67,9 +68,11 @@ body{
   
 }
 
-#cumulJ1, #cumulJ2 {
+.cumul {
     
     font-size: 70px;
+    color: red;
+    
 }
 
 #player{

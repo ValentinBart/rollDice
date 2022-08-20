@@ -51,6 +51,8 @@ function roll(){
             setTimeout(() => {
 
                 pointD();
+                j1.style.fontWeight = 'lighter';
+                j2.style.fontWeight = 'bold';
 
                 },3000)
 
@@ -66,6 +68,8 @@ function roll(){
             setTimeout(() => {
 
                 pointG();
+                j2.style.fontWeight = 'lighter';
+                j1.style.fontWeight = 'bold';
 
             },3000)
 
@@ -92,6 +96,9 @@ function hold(){
         enCoursJ1.innerText = tempJ1;
         
         pointD();
+        j1.style.fontWeight = 'lighter';
+        j2.style.fontWeight = 'bold';
+
         
     }else{
         etat = 1;
@@ -101,7 +108,8 @@ function hold(){
         enCoursJ2.innerText = tempJ2;
        
         pointG();
-       
+        j2.style.fontWeight = 'lighter';
+        j1.style.fontWeight = 'bold';
 
     }
 
