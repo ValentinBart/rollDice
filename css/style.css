@@ -38,6 +38,7 @@ body{
     justify-content: center;
     position: absolute;
     left: 0px;
+    margin-top: 20px;
     
 }
 
@@ -49,9 +50,7 @@ body{
 
 }
 
-#buttonNew{
-    margin-top: 20px;
-}
+
 
 .enCours{
 
