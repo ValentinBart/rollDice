@@ -21,28 +21,32 @@
 
 </head>
 
-<body>
+<body class="container-fluid">
       
 
-  <div class="container-fluid">
+  
 
-    <div class="row top">
+    <header class="row top">
       <p><strong>ROLL DICE GAME</strong> </p>
-    </div>
-    <div class="row">
-        <div class="col col-lg-6 j1" id="j1">
+    </header>
+
+    <main class="row">
+        <section class="col col-lg-6 j1" id="j1">
+          
           <div class="player">
             <p>Player 1</p> <canvas class='canvas' id='canvasG' width='50' height='50'>Votre navigateur est trop vieux</canvas>
             <p class ='cumul' id ="cumulJ1">0</p>
           </div>
           
-         <div class ='mr-auto ml-auto col-lg-3 enCours'>
-           <p>Current :</p>
-           <p class='current'id="enCoursJ1"> 0</p>
-         </div> 
-        </div>
+          <div class ='mr-auto ml-auto col-lg-3 enCours'>
+            <p>Current :</p>
+            <p class='current'id="enCoursJ1"> 0</p>
+          </div> 
 
-        <div class="col col-lg-6 j2" id ="j2">
+        </section>
+
+        <section class="col col-lg-6 j2" id ="j2">
+
           <div class="player">
             <p>Player 2</p> <canvas class='canvas' id='canvasD' width='50' height='50'>Votre navigateur est trop vieux</canvas>
             <p class ='cumul' id ="cumulJ2">0</p>
@@ -52,11 +56,12 @@
             <p class="enCours">Current :</p>
             <p class='current' id="enCoursJ2">0</p>
           </div>  
-        </div>
 
-        <div class="table">
+        </section>
+
+        <section class="table">
+
           <button onclick="newGame()" id="buttonNew" class="btn btn-secondary btn-rounded">New Game</button>
-          
           <br><br/>
           <canvas id='canvasDe' width='200' height='200'>Votre navigateur est trop vieux</canvas>
           <br><br/>
@@ -64,28 +69,12 @@
           <br><br/>
           <button onclick="hold()" id="buttonHold" class="btn btn-secondary btn-rounded">HOLD</button>
       
-        </div> 
+        </section> 
 
 
+    </main>
 
 
-
-    </div>
-
-
-  </div>
-
-   
-
-  
- 
-    
-    
-    
-
-    
-
-    <canvas id='canvasR' width='200' height='200'>Votre navigateur est trop vieux</canvas>
 
   <!-- Our JavaScript -->
 
