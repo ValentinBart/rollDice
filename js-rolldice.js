@@ -1,14 +1,14 @@
 pointG();
 //score cumulé des joueurs 
-var scoreJ1 = 0; 
-var scoreJ2 = 0;
+let scoreJ1 = 0; 
+let scoreJ2 = 0;
 
 //score en cours des joueurs
-var tempJ1 = 0;
-var tempJ2 = 0;
+let tempJ1 = 0;
+let tempJ2 = 0;
 
 //Etat pour savoir si c'est le tour du joueur 1 ou 2
-var etat = 1;
+let etat = 1;
 
 //récupération des différents éléments à modifier
 let cumulJ1 = document.getElementById("cumulJ1");
@@ -37,7 +37,7 @@ function roll(){
     },3000);
 
     //random du dé + animation
-    var result = Math.floor(Math.random() * 6) + 1;
+    let result = Math.floor(Math.random() * 6) + 1;
     
     animationDe(result);
     
@@ -146,7 +146,7 @@ function newGame(){
     etat = 1;
 
     let canvasDe = document.getElementById("canvasDe");
-    var ctx = canvasDe.getContext("2d");
+    let ctx = canvasDe.getContext("2d");
     ctx.clearRect(0,00,200,200);
 
     cumulJ1.innerText = scoreJ1;
@@ -157,7 +157,7 @@ function newGame(){
     buttonHold.disabled = false;
     j1.style.border ="";
     j2.style.border ="";
-
+    pointG();
     
 }
 
@@ -165,7 +165,7 @@ function newGame(){
 function canvasDe(de){
 
     let canvasDe = document.getElementById("canvasDe");
-    var ctx = canvasDe.getContext("2d");
+    let ctx = canvasDe.getContext("2d");
     ctx.lineWidth="4";
     ctx.strokeStyle="black";
     ctx.fillStyle="white";
@@ -281,14 +281,14 @@ function canvasDe(de){
 function pointG(){
 
     let canvasG = document.getElementById("canvasG");
-    var ctx = canvasG.getContext("2d");
+    let ctx = canvasG.getContext("2d");
     ctx.fillStyle ="#E90000";
     ctx.beginPath();
     ctx.arc(10,10,10,2*Math.PI,false);
     ctx.fill();
 
     let canvasD = document.getElementById("canvasD");
-    var ctx2 = canvasD.getContext("2d");
+    let ctx2 = canvasD.getContext("2d");
     ctx2.clearRect(0,0,50,50);
 
 }
@@ -296,14 +296,14 @@ function pointG(){
 function pointD(){
 
     let canvasD = document.getElementById("canvasD");
-    var ctx = canvasD.getContext("2d");
+    let ctx = canvasD.getContext("2d");
     ctx.fillStyle ="#E90000";
     ctx.beginPath();
     ctx.arc(10,10,10,2*Math.PI,false);
     ctx.fill();
 
     let canvasG = document.getElementById("canvasG");
-    var ctx2 = canvasG.getContext("2d");
+    let ctx2 = canvasG.getContext("2d");
     ctx2.clearRect(0,0,50,50);
 
 }
@@ -311,7 +311,7 @@ function pointD(){
 //Une fonction qui génère un canvas de dé aléatoire indépendament du résultat pour l'animation
 function aleaDe(){
     
-    var alea = Math.floor(Math.random() * 6) + 1;
+    let alea = Math.floor(Math.random() * 6) + 1;
     canvasDe(alea);
     
 }
