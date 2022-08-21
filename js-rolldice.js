@@ -26,7 +26,7 @@ let buttonNew = document.getElementById("buttonNew");
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
 function roll(){
     
-    //désactivation des boutons le temps du lancé de dé
+    //désactivation des boutons le temps du lancé de dé et pendant l'animation
     buttonRoll.disabled = true;
     buttonHold.disabled = true;
     buttonNew.disabled = true;
@@ -41,7 +41,7 @@ function roll(){
     
     animationDe(result);
     
-    //Conditon qui stock le résultat en fonction du l'état de la partie et fait les modifications
+    //Conditon qui stock le résultat en fonction du l'état de la partie et fait les modifications 
     if(etat == 1){
         
         if(result == 1){
@@ -113,6 +113,7 @@ function hold(){
 
     }
 
+    //En cas de score supérieur ou égale à 100 effet de victoires
     if(scoreJ1 >= 100){
 
         cumulJ1.innerText = "Victoire";
@@ -276,31 +277,32 @@ function canvasDe(de){
     
 }
 
+//canvas du point du joueur gauche
 function pointG(){
 
-    let canvasG = document.getElementById('canvasG');
+    let canvasG = document.getElementById("canvasG");
     var ctx = canvasG.getContext("2d");
     ctx.fillStyle ="#E90000";
     ctx.beginPath();
     ctx.arc(10,10,10,2*Math.PI,false);
     ctx.fill();
 
-    let canvasD = document.getElementById('canvasD');
+    let canvasD = document.getElementById("canvasD");
     var ctx2 = canvasD.getContext("2d");
     ctx2.clearRect(0,0,50,50);
 
 }
-
+//canvas du point du joueur droit
 function pointD(){
 
-    let canvasD = document.getElementById('canvasD');
+    let canvasD = document.getElementById("canvasD");
     var ctx = canvasD.getContext("2d");
     ctx.fillStyle ="#E90000";
     ctx.beginPath();
     ctx.arc(10,10,10,2*Math.PI,false);
     ctx.fill();
 
-    let canvasG = document.getElementById('canvasG');
+    let canvasG = document.getElementById("canvasG");
     var ctx2 = canvasG.getContext("2d");
     ctx2.clearRect(0,0,50,50);
 
@@ -315,7 +317,7 @@ function aleaDe(){
 }
 
 
-//Fonction pour animer le dé au moement du résultat
+//Fonction pour animer le dé au moment du résultat
 function animationDe(int){
 
     let start = Date.now(); // mémoriser l'heure de début
