@@ -53,30 +53,34 @@ body{
     margin-top: 20px;
 }
 
-#enCours{
+.enCours{
 
-    position: relative;
-    top: 60px;
+
+    background-color: red;
+    
     font-size: 25px;
 }
 
-#enCoursJ1, #enCoursJ2{
 
-    position: relative;
-    top: 40px;
-    font-size: 50px;
-  
-}
 
 .cumul {
-    
+
+    position: relative;
     font-size: 70px;
     color: red;
+    bottom : 70px
     
 }
 
-#player{
+.player{
 
     font-size: 40px;
+
+}
+
+.current{
+    color: white;
+    font-size: 45px;
+    padding-bottom: 20px;
 }
 
