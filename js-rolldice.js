@@ -154,6 +154,8 @@ function newGame(){
     enCoursJ2.innerText = tempJ2;
     buttonRoll.disabled = false;
     buttonHold.disabled = false;
+    j1.style.border ='';
+    j2.style.border ='';
 
     
 }
