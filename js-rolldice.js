@@ -11,16 +11,16 @@ var tempJ2 = 0;
 var etat = 1;
 
 //récupération des différents éléments à modifier
-let cumulJ1 = document.getElementById('cumulJ1');
-let cumulJ2 = document.getElementById('cumulJ2');
-let enCoursJ1 = document.getElementById('enCoursJ1');
-let enCoursJ2 = document.getElementById('enCoursJ2');
-let retour = document.getElementById('retour');
-let j1 = document.getElementById('j1');
-let j2 = document.getElementById('j2');
-let buttonRoll = document.getElementById('buttonRoll');
-let buttonHold = document.getElementById('buttonHold');
-let buttonNew = document.getElementById('buttonNew');
+let cumulJ1 = document.getElementById("cumulJ1");
+let cumulJ2 = document.getElementById("cumulJ2");
+let enCoursJ1 = document.getElementById("enCoursJ1");
+let enCoursJ2 = document.getElementById("enCoursJ2");
+let retour = document.getElementById("retour");
+let j1 = document.getElementById("j1");
+let j2 = document.getElementById("j2");
+let buttonRoll = document.getElementById("buttonRoll");
+let buttonHold = document.getElementById("buttonHold");
+let buttonNew = document.getElementById("buttonNew");
 
 
 //fonction qui tire un nombre entre 1 et 6 au hasard et qui retour le résultat et l'image du dé
@@ -51,8 +51,8 @@ function roll(){
             setTimeout(() => {
 
                 pointD();
-                j1.style.fontWeight = 'lighter';
-                j2.style.fontWeight = 'bold';
+                j1.style.fontWeight = "lighter";
+                j2.style.fontWeight = "bold";
 
                 },3000)
 
@@ -68,8 +68,8 @@ function roll(){
             setTimeout(() => {
 
                 pointG();
-                j2.style.fontWeight = 'lighter';
-                j1.style.fontWeight = 'bold';
+                j2.style.fontWeight = "lighter";
+                j1.style.fontWeight = "bold";
 
             },3000)
 
@@ -96,8 +96,8 @@ function hold(){
         enCoursJ1.innerText = tempJ1;
         
         pointD();
-        j1.style.fontWeight = 'lighter';
-        j2.style.fontWeight = 'bold';
+        j1.style.fontWeight = "lighter";
+        j2.style.fontWeight = "bold";
 
         
     }else{
@@ -108,29 +108,29 @@ function hold(){
         enCoursJ2.innerText = tempJ2;
        
         pointG();
-        j2.style.fontWeight = 'lighter';
-        j1.style.fontWeight = 'bold';
+        j2.style.fontWeight = "lighter";
+        j1.style.fontWeight = "bold";
 
     }
 
     if(scoreJ1 >= 100){
 
-        cumulJ1.innerText = 'Victoire';
-        cumulJ1.style.color ='Green';
-        cumulJ2.innerText = 'Défaite';
-        cumulJ2.style.color ='red';
-        j2.style.border ='1rem solid red';
-        j1.style.border ='1rem solid green';
+        cumulJ1.innerText = "Victoire";
+        cumulJ1.style.color ="Green";
+        cumulJ2.innerText = "Défaite";
+        cumulJ2.style.color ="red";
+        j2.style.border ="1rem solid red";
+        j1.style.border ="1rem solid green";
         buttonRoll.disabled = true;
         buttonHold.disabled = true;
 
     }if(scoreJ2 >= 100){
-        cumulJ2.innerText = 'Victoire';
-        cumulJ2.style.color ='Green'
-        cumulJ1.innerText = 'Défaite';
-        cumulJ1.style.color ='red';
-        j1.style.border ='1rem solid red';
-        j2.style.border ='1rem solid green';
+        cumulJ2.innerText = "Victoire";
+        cumulJ2.style.color ="Green";
+        cumulJ1.innerText = "Défaite";
+        cumulJ1.style.color ="red";
+        j1.style.border ="1rem solid red";
+        j2.style.border ="1rem solid green";
         buttonRoll.disabled = true;
         buttonHold.disabled = true;
     }
@@ -144,7 +144,7 @@ function newGame(){
     tempJ2 = 0;
     etat = 1;
 
-    let canvasDe = document.getElementById('canvasDe');
+    let canvasDe = document.getElementById("canvasDe");
     var ctx = canvasDe.getContext("2d");
     ctx.clearRect(0,00,200,200);
 
@@ -154,8 +154,8 @@ function newGame(){
     enCoursJ2.innerText = tempJ2;
     buttonRoll.disabled = false;
     buttonHold.disabled = false;
-    j1.style.border ='';
-    j2.style.border ='';
+    j1.style.border ="";
+    j2.style.border ="";
 
     
 }
@@ -163,7 +163,7 @@ function newGame(){
 //fonction qui permet de créer les différentes face du dé en fonction du résultat.
 function canvasDe(de){
 
-    let canvasDe = document.getElementById('canvasDe');
+    let canvasDe = document.getElementById("canvasDe");
     var ctx = canvasDe.getContext("2d");
     ctx.lineWidth="4";
     ctx.strokeStyle="black";
