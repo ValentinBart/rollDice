@@ -150,8 +150,10 @@ function newGame(){
     ctx.clearRect(0,00,200,200);
 
     cumulJ1.innerText = scoreJ1;
+    cumulJ1.style.color ="red";
     enCoursJ1.innerText = tempJ1;
     cumulJ2.innerText = scoreJ2;
+    cumulJ2.style.color ="red";
     enCoursJ2.innerText = tempJ2;
     buttonRoll.disabled = false;
     buttonHold.disabled = false;
