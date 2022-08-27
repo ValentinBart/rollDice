@@ -329,7 +329,7 @@ function animationDe(int){
       let timePassed = Date.now() - start;
     
       if (timePassed >= 2000) {
-        clearInterval(timer); // terminer l'animation après 3 secondes
+        clearInterval(timer); // terminer l'animation après 2 secondes
         return;
       }
     
