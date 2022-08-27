@@ -325,15 +325,15 @@ function animationDe(int){
     let start = Date.now(); // mémoriser l'heure de début
 
     let timer = setInterval(function() {
-      // combien de temps s'est écoulé depuis le début ?
+      // combien de temps s'est écoulé depuis le début 
       let timePassed = Date.now() - start;
     
       if (timePassed >= 2000) {
-        clearInterval(timer); // terminer l'animation après 2 secondes
+        clearInterval(timer); // terminer l'animation après 3 secondes
         return;
       }
     
-      // dessiner l'animation à l'instant timePassed
+      //fonction d'aléa
       aleaDe();
     
     }, 20);
